@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const config = require('./config');
 
 const client = new Client({ disableEveryone: true });
 
@@ -21,15 +20,40 @@ Login successful.
 
 });
 
-client.on('ready', () => {
-       client.user.setGame(`Nike Server.`);
 
+client.on('message', message => {
+     if (message.content === ".dservers") {
+     let embed = new Discord.RichEmbed()
+  .setColor("#0000FF")
+  .addField("**Server: **" , client.guilds.size)
+  message.channel.sendEmbed(embed);
+    }
+if (message.content === '<zzzzzzzzhelp1') {    
+          const embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)    
+.addField('**<play <name>** ' , '**لتشغيل المسيقى **')
+
+.addField('**<stop** ' , '**لتوقف المسيقى **')
+
+.addField('**<skip** ' , '**لتخطي الاغنية **')
+
+.addField('**<vol <number>** ' , '**لتغيير الصوت **')
+
+.addField('**<puase** ' , '**ايقاف بشكل موقت **')
+
+.addField('**<resume** ' , '**استاناف الموسيقى **')
+         .setColor('RANDOM')    
+  message.author.sendEmbed(embed);
+  message.react("👌")
+    }
 });
+
+
 
 
    client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === "!help") {
+     if (message.content === "<zzzzzzzhelp") {
                if(!message.channel.guild) return message.reply(':x:  **The orders are not in your الاوامر مو فى **');
   const embed = new Discord.RichEmbed()
           .setColor("#efa800")
@@ -37,24 +61,27 @@ client.on('ready', () => {
            .setThumbnail(message.author.avatarURL)
                  .setTimestamp()
     .setDescription(`
+                                                     
+**<play <name> / To Play The Song
 
-**!play <name> / To Play The Song
+<stop / To Stop The Song
 
-!stop / To Stop The Song
+<skip / To Skip The Song
 
-!skip / To Skip The Song
+<vol <number> / To Change Volume
 
-!vol <number> / To Change Volume
+<pause / To Pause The Song
 
-!pause / To Pause The Song
+<resume / To Resume The Song
 
-!resume / To Resume The Song
+<invite / To Invite The Bot To Your Server
 
+<support / To Join Support Server**
 `);
 
       message.channel.send({embed});
     }
-});
+}); 
 
 
 
@@ -118,7 +145,7 @@ client.on('message', async msg => { // eslint-disable-line
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 					.setFooter("")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
-
+					
 					// eslint-disable-next-line max-depth
 					try {
 						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
@@ -163,7 +190,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 	.setDescription(`:notes: The Song Is Starting **${serverQueue.songs[0].title}**`)
 		return msg.channel.sendEmbed(embedNP);
 	} else if (command === `queue`) {
-
+		
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		let index = 0;
 		const embedqu = new Discord.RichEmbed()
@@ -195,7 +222,7 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	const serverQueue = queue.get(msg.guild.id);
 	console.log(video);
-
+	
 //	console.log('yao: ' + Util.escapeMarkdown(video.thumbnailUrl));
 	const song = {
 		id: video.id,
@@ -256,6 +283,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`Playing :notes: **${song.title}** - Now`);
 }
 
+var prefix = "#vip"
 client.on('message', message => {
   if (!message.content.startsWith(PREFIX)) return;
   var args = message.content.split(' ').slice(1);
@@ -264,22 +292,39 @@ client.on('message', message => {
 
 
 
-if (message.content.startsWith(PREFIX + 'setstream')) {
+if (message.content.startsWith(PREFIX + 'streaming')) {
   client.user.setGame(argresult, "https://www.twitch.tv/31014411");
 	 console.log('test' + argresult);
     message.channel.sendMessage(`Streaming: **${argresult}`)
-}
+} 
 
-if (message.content.startsWith(PREFIX + 'setname')) {
+if (message.content.startsWith(PREFIX + 'username')) {
   client.user.setUsername(argresult).then
 	  message.channel.sendMessage(`Username Changed To **${argresult}**`)
   return message.reply("You Can change the username 2 times per hour");
-}
-if (message.content.startsWith(PREFIX + 'setavatar')) {
+} 
+if (message.content.startsWith(PREFIX + 'avatar')) {
   client.user.setAvatar(argresult);
    message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
 }
 });
 
+ client.on('message', message => {
+let args = message.content.split(' ').slice(1)
 
-client.login("NDMxNzkzNjIwMzY2OTE3NjMy.DakjlQ.RxfKcj-mg1b0W8Xr8O6BQFdi4C0");
+if(message.content.startsWith(prefix + 'listening')) {
+    if(message.author.id != '312244272000663564') return;
+    else {
+    client.user.setActivity(args.join(' '), {type: 'LISTENING'});
+}
+}
+if(message.content.startsWith(prefix + 'watching')) {
+    if(message.author.id != '312244272000663564') return;
+    else {
+    client.user.setActivity(args.join(' '), {type: 'WATCHING'});
+}
+}
+});
+
+
+client.login("NTE1OTUzNDMwMjM0MjY3NjQ4.Dtsofg.Etu8jOCbwe57uKc3UBK-LxfppAs");
