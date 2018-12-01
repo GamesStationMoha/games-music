@@ -213,4 +213,4 @@ message.channel.sendEmbed(embed);
 }
 });
 
-client.login(process.env.BOT_TOKEN1);
+client.login(process.env.TOKEN1);
