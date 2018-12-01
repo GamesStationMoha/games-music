@@ -3,108 +3,719 @@ const client = new Discord.Client();
 const ytdl = require('ytdl-core');
 
 
-
 client.on('message', message => {
   if (message.content.startsWith('.قرأن')) {
     const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
     voiceChannel.join()
       .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=Ktync4j_nmA", { filter: 'audioonly' });
+        const stream = ytdl("https://www.youtube.com/watch?v=ikTgTCzHdYU", { filter: 'audioonly' });
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => voiceChannel.leave());
+return message.reply(`**بسم الله الرحمان الرحيم :kaaba:
+- نسأل الله ان يكتب لنا ولكم الأجر :heart:
+- لا إله الا الله سبحانك أني كنت من الظالمين :kaaba:**`
+).then(msg => msg.delete(3000))		
+      });
+  }
+});
+
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الفاتحة')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=zCDlycmyLKA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الفاتحة ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل البقرة')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=28ryvbfAzdA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة البقرة ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
       });
   }
 });
 
 client.on('message', message => {
-  if (message.content.startsWith('.play.1')) {
+  if (message.content.startsWith(prefix + 'شغل آل عمران')) {
+message.delete(4000)
     const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
     voiceChannel.join()
       .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=vqqvpP8TVfk&t=88s", { filter: 'audioonly' });
+        const stream = ytdl("https://www.youtube.com/watch?v=28ryvbfAzdA", { filter: 'audioonly' });
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة آل عمران ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
       });
   }
 });
 
 client.on('message', message => {
-  if (message.content.startsWith('.play.2')) {
+  if (message.content.startsWith(prefix + 'شغل النساء')) {
+message.delete(4000)
     const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
     voiceChannel.join()
       .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=qFq5h4wtjaM&t=30s", { filter: 'audioonly' });
+        const stream = ytdl("https://www.youtube.com/watch?v=8rE348PxUXw", { filter: 'audioonly' });
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => voiceChannel.leave());
-      });
-  }
-});
-client.on('message', message => {
-  if (message.content.startsWith('.play.3')) {
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
-    voiceChannel.join()
-      .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=mxUsXAwur5o&t=6s", { filter: 'audioonly' });
-        const dispatcher = connnection.playStream(stream);
-        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة النساء ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
       });
   }
 });
 
 client.on('message', message => {
-  if (message.content.startsWith('.play.4')) {
+  if (message.content.startsWith(prefix + 'شغل المائدة')) {
+message.delete(4000)
     const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
     voiceChannel.join()
       .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=LTRcg-gR78o", { filter: 'audioonly' });
+        const stream = ytdl("https://www.youtube.com/watch?v=b8YBxyHnsP4", { filter: 'audioonly' });
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة المائدة ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
       });
   }
 });
 
 client.on('message', message => {
-  if (message.content.startsWith('.play.5')) {
+  if (message.content.startsWith(prefix + 'شغل الأنعام')) {
+message.delete(4000)
     const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
     voiceChannel.join()
       .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=6Hzk5uPDaJk", { filter: 'audioonly' });
+        const stream = ytdl("https://www.youtube.com/watch?v=UmtB8ds8grw", { filter: 'audioonly' });
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => voiceChannel.leave());
-      });
-  }
-});
-client.on('message', message => {
-  if (message.content.startsWith('.play.6')) {
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
-    voiceChannel.join()
-      .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=g46yT-neUnw", { filter: 'audioonly' });
-        const dispatcher = connnection.playStream(stream);
-        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الأنعام ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
       });
   }
 });
 
 client.on('message', message => {
-  if (message.content.startsWith('.play.7')) {
+  if (message.content.startsWith(prefix + 'شغل الأعراف')) {
+message.delete(4000)
     const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
     voiceChannel.join()
       .then(connnection => {
-        const stream = ytdl("https://www.youtube.com/watch?v=g46yT-neUnw", { filter: 'audioonly' });
+        const stream = ytdl("https://www.youtube.com/watch?v=5kV6IDSKf0c", { filter: 'audioonly' });
         const dispatcher = connnection.playStream(stream);
         dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الأعراف ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
       });
   }
 });
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الأنفال')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=GJ-4FJqA09I", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الأنفال ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل التوبة')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=A3dwM8B7PK4", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة التوبة ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل يونس')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=IvPzXDstz90", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة يونس ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل هود')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=6gCrWHPP82Q", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة هود ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل يوسف')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=22TjE6zq6hI", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة يوسف ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الرعد')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=GJ-4FJqA09I", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الرعد ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل إبراهيم')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=aWUFQQHDcUg", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة إبراهيم ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الحجر')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=s8KVrAEOC9g", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الحجر ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل النمل')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=4FwqWmeQREA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة النمل ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الإسراء')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=ZTy2R7VDzEA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الإسراء ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الكهف')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=_dUGNAILiuw", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الكهف ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل مريم')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=21sqaW4ooDM", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة مريم ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل طه')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=-WEpqByP_PQ", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة طه ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الأنبياء')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=a3nlZ3DOp_c", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الأنبياء ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الحج')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=ovLLfBpCOiA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الحج ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل المؤمنون')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=2WJJrv2Fw70", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة المؤمنون ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل النور')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=dhwiiPZcczA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة النور ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الفرقان')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=lLmuySwBYuk", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الفرقان ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الشعراء')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=styCc1NI9eA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الشعراء ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل النمل')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=4FwqWmeQREA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة النمل ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل القصص')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=KlE5-fZcLHg", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة القصص ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل العنكبوت')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=z14rcqtXXUI", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة العنكبوت ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الروم')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=JcY0no2nmE0", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الروم ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل لقمان')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=lWkhXQJMPCQ", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة لقمان ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل السجدة')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=zbyOyImd0v0", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة السجدة ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الأحزاب')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=sEkdbyZpCNs", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الأحزاب ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل سبأ')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=WPbGgZSIjK8", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة سبأ ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل فاطر')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=UcBsRA0tjkk", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة فاطر ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل يس')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=538ym1P4bIg", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة يس ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل ص')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=wJsVMETritA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة ص ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الزمر')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=5JmYHzm5rgA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الزمر ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل غافر')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=EDsq5bEU7Gg", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة غافر ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل فصّلت')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=UGiDjeSy_eg", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة فصّلت ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الشورى')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=1QPKIkcadao", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الشورى ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الزخرف')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=tk_akqm5T-I", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الزخرف ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الدخان')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=qacZ_qUic98", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الدخان ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الجاثية')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=M6M42-L84Fs", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الجاثية ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل الأحقاف')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=taHW4i0hIyk", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة الأحقاف ( وهي من السور مكيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+client.on('message', message => {
+  if (message.content.startsWith(prefix + 'شغل محمّد')) {
+message.delete(4000)
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي :x:**`).then(msg => msg.delete(3000))
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=taHW4i0hIyk", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+return message.reply("**سيتم تشغيل سورة محمّد ( وهي من السور مدنيّة ) ✅**").then(msg => msg.delete(3000))
+      });
+  }
+});
+
+
+
 
 client.on("message", message => {
  if (message.content === ".help") {
@@ -117,6 +728,7 @@ client.on("message", message => {
 
 - لبدأ القرأن أكتب | .قرأن :dove: 
 - لتوقيف القرأن أكتب | .وقف :octagonal_sign: 
+- لأظهار الاذكار أكتب | .اذكار :sparkles: 
 - لدعوة البوت أكتب | .دعوة :comet: 
 **
 `)
@@ -212,5 +824,173 @@ const embed = new Discord.RichEmbed()
 message.channel.sendEmbed(embed);
 }
 });
+
+
+
+client.on('message', function(message) {
+        var prefix = ".";
+        var Color = ['bff442','f4d941','ea3c62','ffffff']
+        if (message.content.startsWith(prefix + 'بوت')) {
+            var ZmP = new Discord.RichEmbed()
+.setColor(`${Color[Math.floor(Math.random() * Color.length)]}`)
+.addField('**:crown: Servers**','**[ '+client.guilds.size+' ]**',true)
+.addField('**:bust_in_silhouette: Users**','**[ '+client.users.size+' ]**',true)
+.addField('**:earth_africa: Room**','**[ '+client.channels.size+' ]**',true)
+.setFooter('Quran',`${client.user.avatarURL}`)
+.setTimestamp()
+message.channel.send({embed:ZmP});
+}
+});
+
+client.on('message', message => {
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('.bc21')){
+ if(!message.author.id === '312244272000663564') return;
+message.channel.sendMessage('جاري ارسال الرسالة لجميع اعضاء البوت |:white_check_mark:')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
+	
+
+	
+	
+const fs = require("fs");
+let points = JSON.parse(fs.readFileSync(`./points.json`, `utf8`));
+var shortNumber = require('short-number');
+
+
+
+//fkk
+
+client.on('message', message => {
+  if (message.author.bot) return;
+
+
+if(!message.channel.guild) return;
+
+if (!points[message.author.id]) points[message.author.id] = {
+	points: 0,
+  wins: 0,
+  loses: 0,
+  };
+if (message.content.startsWith(prefix + '11111اسئلة')) {
+
+const type = require('./fkk.json');
+const item = type[Math.floor(Math.random() * type.length)];
+const filter = response => {
+    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+message.channel.send('**لديك 10  ثواني لتجيب**').then(msg => {
+
+   const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+ .setThumbnail(message.author.avatarURL)     
+ .addField(`**Quran**`,` **${item.type}**`)
+ .setFooter(`ستكسب 15 نقطة`)
+
+msg.channel.send(embed).then(() => {
+        message.channel.awaitMessages(filter, { maxMatches: 1, time: 10000, errors: ['time'] })
+        .then((collected) => {
+		message.channel.send(`**${collected.first().author} مبروك لقد كسبت 15 نقطة 
+لمعرفة نقاطك الرجاء كتابة .points**`);
+
+		console.log(`[Typing] ${collected.first().author} typed the word.`);
+			let userData = points[collected.first().author.id];
+userData.wins += 1 
+userData.points += 15; 
+
+          })
+
+          .catch(collected => {
+points[message.author.id].loses += 1;
+
+            message.channel.send(`:x: **حظ اوفر المرة القادمة ! لقد خسرت , انتهى الوقت**`);
+			console.log('[Typing] Error: No one type the word.');
+
+		})
+	})
+    })
+points[message.author.id].game += 1; 
+
+
+}
+fs.writeFile("./points.json",JSON.stringify(points), function(err){
+    if (err) console.log(err);
+  })
+});
+
+
+//points
+client.on('message', message => {
+
+if (!points[message.author.id]) points[message.author.id] = {
+	points: 0,
+  wins: 0,
+  loses: 0,
+  game: 0,
+
+  };
+  if (message.author.bot) return;
+
+
+if(!message.channel.guild) return;
+	let userData = points[message.author.id];
+
+if (message.content.startsWith(prefix + '.21355points')) {
+let pointss = userData.points
+try {
+                            pointss = shortNumber(pointss);
+                        } catch (error) {
+                            pointss = 0;
+                        }
+                        let wins = userData.wins
+try {
+                            wins = shortNumber(wins);
+                        } catch (error) {
+                            wins = 0;
+                        }
+                        let loses = userData.loses
+try {
+                            loses = shortNumber(loses);
+                        } catch (error) {
+                            loses  = 0;
+                        }
+                         let games = userData.game
+try {
+                            games = shortNumber(games);
+                        } catch (error) {
+                            games  = 0;
+                        }
+	let embed = new Discord.RichEmbed()
+    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
+	.setColor('#000000')
+	.setDescription(`**Quran
+
+:white_check_mark: Wins : ${wins}
+:x: Loses: ${loses}
+:label: Points: ${pointss}
+:video_game: Games Played: ${games}**`);
+	message.channel.sendEmbed(embed)
+  }
+  fs.writeFile("./points.json", JSON.stringify(points), (err) => {
+    if (err) console.error(err)
+  })
+
+});
+
+
+
+client.on('ready', () => {
+     client.user.setActivity("${client.guilds.size} Servers ✨ .help",{type: 'WATCHING'});
+
+});
+
+
+
 
 client.login(process.env.TOKEN1);
