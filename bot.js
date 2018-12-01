@@ -861,7 +861,7 @@ m.sendMessage(args)
 
 
 client.on('ready', () => {
-     client.user.setActivity("${client.guilds.size} Servers ✨ .help",{type: 'WATCHING'});
+     client.user.setActivity("I'm Backk ✨ .help",{type: 'WATCHING'});
 
 });
 
