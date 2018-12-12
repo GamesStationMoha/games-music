@@ -1,4 +1,4 @@
-exports.TOKEN = 'NTIyMzgyOTM2MTMwMDYwMjg4.DvKM9A.KreaUafTe2gAqrxtFyJiNjfyiKg';
+exports.TOKEN = 'process.env.tokenpr';
 
 exports.PREFIX = 'p';
 
