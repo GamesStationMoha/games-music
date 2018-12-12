@@ -1,13 +1,12 @@
 const { Client, Util } = require('discord.js');
 const Discord = require("discord.js");
-const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./prcon');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
 const client = new Client({ disableEveryone: true });
 
 const youtube = new YouTube(GOOGLE_API_KEY);
-
+client.GOOGLE_API_KEY = 'AIzaSyDWE7m3F-p4CUT2lv7oudtY5r2ryPNehXE';
 const queue = new Map();
 
 client.on('ready', () => {
@@ -22,10 +21,10 @@ Login successful.
 
 
 client.on('message', message => {
-     if (message.content === ".dservers") {
+     if (message.content === "phelp") {
      let embed = new Discord.RichEmbed()
   .setColor("#0000FF")
-  .addField("**Server: **" , client.guilds.size)
+  .addField("**Pride.")
   message.channel.sendEmbed(embed);
     }
 if (message.content === 'phelp') {    
@@ -256,6 +255,9 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل: **${song.title}**`);
 }
 
+var adminprefix = 'p'
+
+
 client.on('message', message => {
   if (!message.content.startsWith(PREFIX)) return;
   var args = message.content.split(' ').slice(1);
@@ -278,20 +280,21 @@ client.on('message', message => {
       message.channel.send(`Listening :   **${argresult}**`)
   } else 
 
-if (message.content.startsWith(PREFIX + 'setstream')) {
+if (message.content.startsWith(adminprefix + 'sets')) {
   client.user.setGame(argresult, "https://www.twitch.tv/31014411");
 	 console.log('test' + argresult);
     message.channel.sendMessage(`Streaming: **${argresult}`)
 } 
 
-if (message.content.startsWith(PREFIX + 'setname')) {
+if (message.content.startsWith(adminprefix + 'setname')) {
   client.user.setUsername(argresult).then
 	  message.channel.sendMessage(`Username Changed To **${argresult}**`)
   return message.reply("You Can change the username 2 times per hour");
 } 
-if (message.content.startsWith(PREFIX + 'setavatar')) {
+if (message.content.startsWith(adminprefix + 'setavatar')) {
   client.user.setAvatar(argresult);
    message.channel.sendMessage(`Avatar Changed Successfully To **${argresult}**`);
 }
 });
 
+client.login(process.env.tokenpr);
