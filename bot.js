@@ -861,7 +861,7 @@ m.sendMessage(args)
 
 
 client.on('ready', () => {
-     client.user.setActivity("جمعة مبااَركه ✨ .help",{type: 'WATCHING'});
+     client.user.setActivity("**Quraan ✨ .help**",{type: 'WATCHING'});
 
 });
 
